@@ -12,6 +12,7 @@ namespace boolean
         {
             int var1 = 0;
             int var2 = 0;
+            
             while (true)
             {
                 
