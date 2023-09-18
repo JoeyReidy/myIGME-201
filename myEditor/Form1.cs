@@ -17,9 +17,9 @@ namespace myEditor
             InitializeComponent();
 
             this.NewToolStripMenuItem.Click += new EventHandler(NewToolStripMenuItem_CLick);
-            this.NewToolStripMenuItem.Click += new EventHandler(OpenToolStripMenuItem_Click);
-            this.NewToolStripMenuItem.Click += new EventHandler(SaveToolStripMenuItem_Click);
-            this.NewToolStripMenuItem.Click += new EventHandler(ExitToolStripMenuItem_Click);
+            this.OpenToolStripMenuItem.Click += new EventHandler(OpenToolStripMenuItem_Click);
+            this.SaveToolStripMenuItem.Click += new EventHandler(SaveToolStripMenuItem_Click);
+            this.ExitToolStripMenuItem.Click += new EventHandler(ExitToolStripMenuItem_Click);
 
             this.copyToolStripMenuItem.Click += new EventHandler(NewToolStripMenuItem_CLick);
             this.cutToolStripMenuItem.Click += new EventHandler(NewToolStripMenuItem_CLick);
@@ -46,20 +46,21 @@ namespace myEditor
                 richTextBox.LoadFile(openFileDialog.FileName, richTextBoxStreamType);
                 this.Text = "MyEditor (" + openFileDialog.FileName + ")";
             }
+
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog.FileName = openFileDialog.FileName;
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 RichTextBoxStreamType richTextBoxStreamType = RichTextBoxStreamType.RichText;
 
-                if (openFileDialog.FileName.ToLower().Contains(".txt"))
+                if (saveFileDialog.FileName.ToLower().Contains(".txt"))
                 {
                     richTextBoxStreamType = RichTextBoxStreamType.PlainText;
                 }
-                richTextBox.SaveFile(openFileDialog.FileName, richTextBoxStreamType);
+                richTextBox.SaveFile(saveFileDialog.FileName, richTextBoxStreamType);
                 this.Text = "MyEditor (" + saveFileDialog.FileName + ")";
             }
         }
