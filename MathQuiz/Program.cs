@@ -168,14 +168,16 @@ namespace MathQuiz
                 do
                 {
                     Console.Write(sQuestions);
-                    sResponse = Console.ReadLine();
+                    
 
                     timeOver = false;
 
                         timer = new Timer(5000);
                         timer.Elapsed += new ElapsedEventHandler(TimeUp);
                         timer.Start();
-                        try
+
+                    sResponse = Console.ReadLine();
+                    try
                         {
                             nResponse = int.Parse(sResponse);
                             bValid = true;
@@ -188,7 +190,7 @@ namespace MathQuiz
                         }
 
 
-                } while (!bValid);
+                } while (!bValid && !timeOver);
 
                 // if response == answer, output flashy reward and increment # correct
                 // else output stark answer
@@ -246,7 +248,7 @@ namespace MathQuiz
         static void TimeUp(object sender, EventArgs e)
         {
             Console.WriteLine();
-            Console.WriteLine("Time is up.");
+            Console.WriteLine("Time is up. Press enter to continue:");
             timeOver = true;
             timer.Stop();
         }
