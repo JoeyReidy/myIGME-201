@@ -19,6 +19,7 @@ namespace Traffic
         {
             vehicle.LoadPassenger();
             Console.WriteLine(vehicle.ToString());
+
         }
     }
 }
