@@ -86,6 +86,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -177,7 +178,7 @@
             this.fontStripButton,
             this.toolStripSeparator2,
             this.testToolStripButton});
-            this.toolStrip.Location = new System.Drawing.Point(14, 0);
+            this.toolStrip.Location = new System.Drawing.Point(3, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(170, 27);
             this.toolStrip.TabIndex = 0;
@@ -238,14 +239,14 @@
             // mSSansSerifToolStripMenuItem
             // 
             this.mSSansSerifToolStripMenuItem.Name = "mSSansSerifToolStripMenuItem";
-            this.mSSansSerifToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mSSansSerifToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.mSSansSerifToolStripMenuItem.Text = "MS Sans Serif";
             this.mSSansSerifToolStripMenuItem.ToolTipText = "MS sans serif";
             // 
             // timesNewRomanToolStripMenuItem
             // 
             this.timesNewRomanToolStripMenuItem.Name = "timesNewRomanToolStripMenuItem";
-            this.timesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.timesNewRomanToolStripMenuItem.Text = "Times New Roman";
             this.timesNewRomanToolStripMenuItem.ToolTipText = "times new roman";
             // 
