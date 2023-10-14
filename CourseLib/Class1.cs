@@ -34,7 +34,7 @@ namespace CourseLib
 
     public class Courses
     {
-        public SortedList<string, Course> sortedList;
+        public SortedList<string, Course> sortedList = new SortedList<string, Course>();
         public Course this[string courseCode]
         {
             get
@@ -56,8 +56,6 @@ namespace CourseLib
             {
                 try
                 {
-                    // we can add to the list using these 2 methods
-                    //      sortedList.Add(email, value);
                     sortedList[courseCode] = value;
                 }
                 catch
