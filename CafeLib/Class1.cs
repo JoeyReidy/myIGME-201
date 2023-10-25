@@ -123,7 +123,7 @@ namespace CafeLib
             throw new NotImplementedException();
         }
 
-        public CupOfCocoa(bool marshmallows) : base("Expensive")
+        public CupOfCocoa(bool marshmallows = false) : base("Expensive")
         {
 
         }
