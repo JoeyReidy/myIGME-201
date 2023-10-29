@@ -1,0 +1,12 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+
+[+A:LacrossePlayer|+name:string;+stick:IStick;|+WallBall();+PlayLax():A;]
+[+I:ILaxPlayer|Practice();]
+[+I:IStick|Catch();Throw();Shoot();]
+[+A:Stick|+mesh:string;+head:string;+shaft:string;]
+[+ShortStick|SwimDodge();]^[+I:Stick][+A:Stick]
+[+DPole|PokeCheck();]^[+I:Stick][+A:Stick]
+[AttackPlayer|Score();]^[+A:LacrossePlayer][+I:ILaxPlayer]
+[DefencePlayer|CauseTurnover();]^[+A:LacrossePlayer][+I:ILaxPlayer]
