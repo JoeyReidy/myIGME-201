@@ -22,6 +22,7 @@ namespace numberGuessingGame
             this.progressBar1.Value = 45;
             this.timer1.Start();
 
+
             this.guessButton.Click += new EventHandler(GuessButton__Click);
             this.timer1.Tick += new EventHandler(Timer1__Tick);
         }
