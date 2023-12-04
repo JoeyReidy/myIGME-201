@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,11 +13,13 @@ namespace UIFromHell
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
             this.exitButton.Click += new EventHandler(ExitButton__Click);
             this.enterButton.Click += new EventHandler(EnterButton__Click);
+            
             this.timer1.Tick += new EventHandler(Timer__Tick);
         }
         private void Timer__Tick(object sender, EventArgs e)
