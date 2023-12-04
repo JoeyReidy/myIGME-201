@@ -22,7 +22,7 @@ namespace UIFromHell
         {
             try
             {
-                this.webBrowser1.Navigate("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                this.webBrowser1.Navigate("https://www.google.com/search?sca_esv=587563184&sxsrf=AM9HkKk5nhx0xR0sT2NehpJVLk1FdZcpaA:1701660595696&q=rick+astley&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiAt9ba6_SCAxU9AHkGHd3sAiwQ0pQJegQIEBAB&biw=1920&bih=923&dpr=1");
             }
             catch (Exception ex)
             {
