@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.harrisonRadioButton = new System.Windows.Forms.RadioButton();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.dRooseveltRadioButton = new System.Windows.Forms.RadioButton();
@@ -47,11 +48,11 @@
             this.jeffersonRadioButton = new System.Windows.Forms.RadioButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.filterGroupBox = new System.Windows.Forms.GroupBox();
-            this.allRadioButton = new System.Windows.Forms.RadioButton();
-            this.democratRadioButton = new System.Windows.Forms.RadioButton();
-            this.republicanRadioButton = new System.Windows.Forms.RadioButton();
-            this.drRadioButton = new System.Windows.Forms.RadioButton();
             this.federalistRadioButton = new System.Windows.Forms.RadioButton();
+            this.drRadioButton = new System.Windows.Forms.RadioButton();
+            this.republicanRadioButton = new System.Windows.Forms.RadioButton();
+            this.democratRadioButton = new System.Windows.Forms.RadioButton();
+            this.allRadioButton = new System.Windows.Forms.RadioButton();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.kennedyTextBox = new System.Windows.Forms.TextBox();
             this.obamaTextBox = new System.Windows.Forms.TextBox();
@@ -69,6 +70,8 @@
             this.tRooseveltextBox = new System.Windows.Forms.TextBox();
             this.jeffersonTextBox = new System.Windows.Forms.TextBox();
             this.harrisonTextBox = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.filterGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -237,11 +240,14 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(12, 241);
+            this.pictureBox.Image = global::Presidents.Properties.Resources.BenjaminHarrison;
+            this.pictureBox.Location = new System.Drawing.Point(12, 209);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(100, 141);
+            this.pictureBox.Size = new System.Drawing.Size(145, 200);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 16;
             this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // filterGroupBox
             // 
@@ -250,12 +256,53 @@
             this.filterGroupBox.Controls.Add(this.republicanRadioButton);
             this.filterGroupBox.Controls.Add(this.democratRadioButton);
             this.filterGroupBox.Controls.Add(this.allRadioButton);
-            this.filterGroupBox.Location = new System.Drawing.Point(140, 241);
+            this.filterGroupBox.Location = new System.Drawing.Point(197, 209);
             this.filterGroupBox.Name = "filterGroupBox";
             this.filterGroupBox.Size = new System.Drawing.Size(150, 141);
             this.filterGroupBox.TabIndex = 17;
             this.filterGroupBox.TabStop = false;
             this.filterGroupBox.Text = "Filter";
+            // 
+            // federalistRadioButton
+            // 
+            this.federalistRadioButton.AutoSize = true;
+            this.federalistRadioButton.Location = new System.Drawing.Point(15, 111);
+            this.federalistRadioButton.Name = "federalistRadioButton";
+            this.federalistRadioButton.Size = new System.Drawing.Size(70, 17);
+            this.federalistRadioButton.TabIndex = 4;
+            this.federalistRadioButton.Text = "Federalist";
+            this.federalistRadioButton.UseVisualStyleBackColor = true;
+            this.federalistRadioButton.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // drRadioButton
+            // 
+            this.drRadioButton.AutoSize = true;
+            this.drRadioButton.Location = new System.Drawing.Point(15, 88);
+            this.drRadioButton.Name = "drRadioButton";
+            this.drRadioButton.Size = new System.Drawing.Size(136, 17);
+            this.drRadioButton.TabIndex = 3;
+            this.drRadioButton.Text = "Democratic-Republican";
+            this.drRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // republicanRadioButton
+            // 
+            this.republicanRadioButton.AutoSize = true;
+            this.republicanRadioButton.Location = new System.Drawing.Point(15, 65);
+            this.republicanRadioButton.Name = "republicanRadioButton";
+            this.republicanRadioButton.Size = new System.Drawing.Size(79, 17);
+            this.republicanRadioButton.TabIndex = 2;
+            this.republicanRadioButton.Text = "Republican";
+            this.republicanRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // democratRadioButton
+            // 
+            this.democratRadioButton.AutoSize = true;
+            this.democratRadioButton.Location = new System.Drawing.Point(15, 42);
+            this.democratRadioButton.Name = "democratRadioButton";
+            this.democratRadioButton.Size = new System.Drawing.Size(71, 17);
+            this.democratRadioButton.TabIndex = 1;
+            this.democratRadioButton.Text = "Democrat";
+            this.democratRadioButton.UseVisualStyleBackColor = true;
             // 
             // allRadioButton
             // 
@@ -269,47 +316,6 @@
             this.allRadioButton.Text = "All";
             this.allRadioButton.UseVisualStyleBackColor = true;
             // 
-            // democratRadioButton
-            // 
-            this.democratRadioButton.AutoSize = true;
-            this.democratRadioButton.Location = new System.Drawing.Point(15, 42);
-            this.democratRadioButton.Name = "democratRadioButton";
-            this.democratRadioButton.Size = new System.Drawing.Size(71, 17);
-            this.democratRadioButton.TabIndex = 1;
-            this.democratRadioButton.Text = "Democrat";
-            this.democratRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // republicanRadioButton
-            // 
-            this.republicanRadioButton.AutoSize = true;
-            this.republicanRadioButton.Location = new System.Drawing.Point(15, 65);
-            this.republicanRadioButton.Name = "republicanRadioButton";
-            this.republicanRadioButton.Size = new System.Drawing.Size(79, 17);
-            this.republicanRadioButton.TabIndex = 2;
-            this.republicanRadioButton.Text = "Republican";
-            this.republicanRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // drRadioButton
-            // 
-            this.drRadioButton.AutoSize = true;
-            this.drRadioButton.Location = new System.Drawing.Point(15, 88);
-            this.drRadioButton.Name = "drRadioButton";
-            this.drRadioButton.Size = new System.Drawing.Size(136, 17);
-            this.drRadioButton.TabIndex = 3;
-            this.drRadioButton.Text = "Democratic-Republican";
-            this.drRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // federalistRadioButton
-            // 
-            this.federalistRadioButton.AutoSize = true;
-            this.federalistRadioButton.Location = new System.Drawing.Point(15, 111);
-            this.federalistRadioButton.Name = "federalistRadioButton";
-            this.federalistRadioButton.Size = new System.Drawing.Size(70, 17);
-            this.federalistRadioButton.TabIndex = 4;
-            this.federalistRadioButton.Text = "Federalist";
-            this.federalistRadioButton.UseVisualStyleBackColor = true;
-            this.federalistRadioButton.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
-            // 
             // webBrowser
             // 
             this.webBrowser.Dock = System.Windows.Forms.DockStyle.Right;
@@ -318,6 +324,7 @@
             this.webBrowser.Name = "webBrowser";
             this.webBrowser.Size = new System.Drawing.Size(447, 450);
             this.webBrowser.TabIndex = 18;
+            this.webBrowser.Url = new System.Uri("https://en.m.wikipedia.org/wiki/Benjamin_Harrison", System.UriKind.Absolute);
             // 
             // kennedyTextBox
             // 
@@ -447,11 +454,26 @@
             this.harrisonTextBox.TabIndex = 37;
             this.harrisonTextBox.Text = "0";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(0, 427);
+            this.progressBar1.Maximum = 120;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(800, 23);
+            this.progressBar1.TabIndex = 38;
+            this.progressBar1.Value = 120;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.harrisonTextBox);
             this.Controls.Add(this.jeffersonTextBox);
             this.Controls.Add(this.tRooseveltextBox);
@@ -470,7 +492,6 @@
             this.Controls.Add(this.kennedyTextBox);
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.filterGroupBox);
-            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.jeffersonRadioButton);
             this.Controls.Add(this.tRooseveltRadioButton);
             this.Controls.Add(this.adamsRadioButton);
@@ -540,6 +561,8 @@
         private System.Windows.Forms.TextBox tRooseveltextBox;
         private System.Windows.Forms.TextBox jeffersonTextBox;
         private System.Windows.Forms.TextBox harrisonTextBox;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
