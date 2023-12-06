@@ -199,7 +199,8 @@ namespace LinkedList
 
             while (linkedListNode != null)
             {
-                reverseLinkedList.AddLast(linkedListNode);
+                LinkedListNode<object> node = linkedList.Find(linkedListNode.Value);
+                reverseLinkedList.AddLast(node);
                 linkedListNode = linkedListNode.Previous;
             }
 
