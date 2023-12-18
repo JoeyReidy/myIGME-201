@@ -43,6 +43,25 @@ namespace MyStack
                 return stack[stack.Count - 1];
             }
         }
+
+
+        public void Enqueue(int n)
+        {
+            stack.Add(n);
+        }
+        public int Dequeue()
+        {
+            if (stack.Count <= 0)
+            {
+                throw new Exception("No integers to dequeue");
+            }
+            else
+            {
+                int last = stack[0];
+                stack.RemoveAt(0);
+                return last;
+            }
+        }
     }
     internal class Program
     {
