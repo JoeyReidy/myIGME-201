@@ -8,6 +8,8 @@ namespace Graph
 {
     internal class Program
     {
+        static bool[] visited;
+
         static bool[,] mGraph = new bool[,]
         {
            { false   , true    , true   , false   , false    , false   , false   , false },
@@ -20,21 +22,47 @@ namespace Graph
            { false   , false   , false   , false   , false   , false    , false   , false }
         };
 
-        static int[][] lraph = new int[][]
+        static string[][] lGraph = new string[][]
         {
-            new int[] { 2, 3 },
-            new int[] { 3, 4 },
-            new int[] { 3, 5 },
-            new int[] { 2, 1 },
-            new int[] { 7 },
-            new int[] { 6 },
-            new int[] { 4 },
-            null
+            new string[] { "grey", "cyan" },
+            new string[] { "cyan", "yellow" },
+            new string[] { "cyan", "orange" },
+            new string[] { "grey", "blue" },
+            new string[] { "green" },
+            new string[] { "purple" },
+            new string[] { "yellow" },
+            new string[] {  },
         };
         static void Main(string[] args)
         {
-            
+            DFS();
+        }
 
+        static void DFS()
+        {
+            visited = new bool[lGraph.Length];
+
+            for (int i = 0; i < lGraph.Length - 1; i++)
+            {
+                if (!visited[i])
+                {
+                    DFSUtil(i);
+                }
+            }
+        }
+
+        static void DFSUtil(int vertex)
+        {
+            visited[vertex] = true;
+            Console.WriteLine(lGraph[vertex][0]);
+
+            for (int i = 0; i < lGraph.Length - 1; i++)
+            {
+                if ((i < mGraph.Length) && mGraph[vertex, i] && !visited[i])
+                {
+                    DFSUtil(i);
+                }
+            }
         }
     }
 }
